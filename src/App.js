@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
 import "./app.css";
 import {Link} from '@material-ui/core'
+import Button from '@mui/material/Button';
 
 
 function App() {
 
   const [data, setData] = useState([])
   const columns = [
-    { title: "First Name", field: "first_name", searchable:true },
+    { title: "First Name", field: "first_name", searchable:true, render:rowData=><Button href={`${rowData.first_name}`}>{rowData.first_name}</Button> },
     { title: "Last Name", field: "last_name", searchable:true },
     { title: "Age", field: "age", searchable:false },
     { title: "Email", field: "email", searchable:false },
